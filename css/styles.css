@@ -708,6 +708,7 @@ h5 {
   flex-direction: column;
   gap: 4px;
 }
+
 .form-group + .form-group {
   margin-top: 10px;
 }
@@ -720,7 +721,7 @@ h5 {
   letter-spacing: 0.01em;
   color: #757575;
 }
-.form-group :nth-child(2) {
+.form-group > *:nth-child(2) {
   padding: 12px 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -729,6 +730,7 @@ h5 {
 
 .textarea {
   resize: none;
+  outline: none;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -777,9 +779,13 @@ h5 {
   cursor: pointer;
 }
 
-.form-group :nth-child(2):hover,
+.form-group :nth-child(2):active,
 .form-group :nth-child(2):focus {
   border: 1px solid #0a8bf5;
+}
+
+.form-group:focus-within > svg {
+  color: #0a8bf5;
 }
 
 .form-footer {
